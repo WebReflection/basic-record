@@ -1,12 +1,13 @@
 {
   "name": "basic-record",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "A 25 LOC utility to define and create records via objects literals.",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "scripts": {
     "build": "npm run cjs && npm test",
     "cjs": "ascjs esm cjs",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc node test.js"
   },
   "keywords": [
