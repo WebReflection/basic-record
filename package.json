@@ -1,0 +1,26 @@
+{
+  "name": "basic-record",
+  "version": "0.0.1",
+  "description": "",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "scripts": {
+    "build": "npm run cjs && npm test",
+    "cjs": "ascjs esm cjs",
+    "test": "nyc node test.js"
+  },
+  "keywords": [
+    "record",
+    "struct",
+    "mixins",
+    "basic",
+    "simple"
+  ],
+  "author": "Andrea Giammarchi",
+  "license": "ISC",
+  "devDependencies": {
+    "ascjs": "^3.1.2",
+    "coveralls": "^3.0.9",
+    "nyc": "^15.0.0"
+  }
+}
