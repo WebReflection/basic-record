@@ -35,3 +35,43 @@ console.assert(
   constructor.implements(Point2D) === true  // Point3D is also Point2D
 );
 ```
+
+
+### Use cases & Benchmark
+
+The peculiarity of records is their ability to define every default value directly through their prototype.
+The benefits are seen particularly in creation of many default objects, but also assignment of partial properties, as opposite of guarding each received property, or argument, with a default value.
+
+The [benchmark](./benchmark.js) file reflects these goals, underlying where it's easier, and faster, to use records instead of regular classes instances.
+
+
+#### Results:
+
+```
+class.create: 0.299ms
+record.create: 0.023ms
+
+class.createArgs: 0.016ms
+record.createArgs: 0.073ms
+
+class.createExtend: 0.443ms
+record.createExtend: 0.02ms
+
+class.createExtendArgs: 0.014ms
+record.createExtendArgs: 0.061ms
+
+class.createPartialDefaults: 0.056ms
+record.createPartialDefaults: 0.044ms
+
+class.copy: 0.256ms
+record.copy: 0.058ms
+
+class.copyExtend: 0.528ms
+record.copyExtend: 0.063ms
+
+class.getCoords: 0.455ms
+record.getCoords: 0.009ms
+
+class.getCoordsArgs: 0.018ms
+record.getCoordsArgs: 0.007ms
+```
