@@ -1,5 +1,6 @@
 'use strict';
-const {assign, defineProperties, getOwnPropertyDescriptors} = Object;
+const getOwnPropertyDescriptors = (m => m.__esModule ? /* istanbul ignore next */ m.default : /* istanbul ignore next */ m)(require('@ungap/get-own-property-descriptors'));
+const {assign, defineProperties} = Object;
 function create(Record, init) {
   return arguments.length < 2 ? new Record : assign(new Record, init);
 }

@@ -1,4 +1,5 @@
-const {assign, defineProperties, getOwnPropertyDescriptors} = Object;
+import getOwnPropertyDescriptors from '@ungap/get-own-property-descriptors';
+const {assign, defineProperties} = Object;
 export function create(Record, init) {
   return arguments.length < 2 ? new Record : assign(new Record, init);
 };
