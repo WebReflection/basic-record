@@ -5,8 +5,9 @@
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "scripts": {
-    "build": "npm run cjs && npm test",
+    "build": "npm run cjs && npm run fix && npm test",
     "cjs": "ascjs esm cjs",
+    "fix": "sed -i 's/(m => .* m)//' cjs/index.js",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "test": "nyc node test.js"
   },
